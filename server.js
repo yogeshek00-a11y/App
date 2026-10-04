@@ -1,5 +1,5 @@
 const http=require('http'),fs=require('fs'),path=require('path'),crypto=require('crypto'),url=require('url');
-const PORT=process.env.PORT||3000, DB=path.join(__dirname,'data','db.json'), PUBLIC=path.join(__dirname,'public');
+const PORT=process.env.PORT||3000, DB=path.join(__dirname,'data','db.json'), PUBLIC=__dirname
 const sessions=new Map();
 function ensure(){if(!fs.existsSync(path.dirname(DB)))fs.mkdirSync(path.dirname(DB),{recursive:true});if(!fs.existsSync(DB))fs.writeFileSync(DB,JSON.stringify({users:[],swipes:[],messages:[]},null,2));}
 function db(){ensure();return JSON.parse(fs.readFileSync(DB,'utf8'))} function save(x){fs.writeFileSync(DB,JSON.stringify(x,null,2))}
