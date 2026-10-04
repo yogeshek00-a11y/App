@@ -1,0 +1,9 @@
+{
+  "name": "connection-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Connection - Tinder-style matching app MVP",
+  "main": "server.js",
+  "scripts": {"start":"node server.js"},
+  "engines": {"node": ">=18"}
+}
